@@ -40,7 +40,13 @@ const chooseSaying = function() {
     'Hilarious',
     'We\'re not solving for that',
     'k great',
-    'ya\'ll coming over?'
+    'ya\'ll coming over?',
+    'Does brian have pants on?',
+    'What is Brian drinking?',
+    'You\'re not answering the question',
+    'Love it',
+    'affagados?',
+    'When I go to the bank, I only get $100 in quarters',
   ])
 }
 
@@ -60,7 +66,7 @@ export default class VirtualAlan extends Component {
 
     this.setState({
       backgroundColor: colorGenerator(),
-      utterances: this.state.utterances.concat([utterance])
+      utterances: this.state.utterances.concat([utterance]).reverse()
     })
     tts.speak({
       text: utterance,
@@ -100,7 +106,6 @@ export default class VirtualAlan extends Component {
         backgroundColor: this.state.backgroundColor,
       },
       utteranceContainer: {
-        flex: 1,
         justifyContent: 'center',
         alignItems: 'flex-start',
       },
