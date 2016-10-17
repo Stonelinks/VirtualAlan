@@ -66,7 +66,7 @@ export default class VirtualAlan extends Component {
 
     this.setState({
       backgroundColor: colorGenerator(),
-      utterances: this.state.utterances.concat([utterance]).reverse()
+      utterances: [utterance].concat(this.state.utterances)
     })
     tts.speak({
       text: utterance,
@@ -99,15 +99,17 @@ export default class VirtualAlan extends Component {
 
   get styles() {
     return StyleSheet.create({
-      container: {
+      actualContainer: {
         flex: 1,
+        backgroundColor: this.state.backgroundColor,
+      },
+      container: {
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: this.state.backgroundColor,
       },
       utteranceContainer: {
         justifyContent: 'center',
-        alignItems: 'flex-start',
+        alignItems: 'center',
       },
       utterance: {
         fontSize: 15,
@@ -131,18 +133,22 @@ export default class VirtualAlan extends Component {
     const styles = this.styles
 
     return (
-      <View style={styles.container}>
+      <View style={styles.actualContainer}>
         <TouchableHighlight onPress={this.speak}>
           <View>
-            <Image style={styles.image} source={{uri: 'http://imgur.com/9yzlEyv.png'}} />
-            <Text style={styles.saySomething} onPress={this.speak}>
-              Make Alan say something
-            </Text>
+            <View style={styles.container}>
+              <View>
+                <Image style={styles.image} source={{uri: 'http://imgur.com/9yzlEyv.png'}} />
+                <Text style={styles.saySomething} onPress={this.speak}>
+                  Make Alan say something
+                </Text>
+              </View>
+            </View>
+            <View style={styles.utteranceContainer}>
+              {this.utterances}
+            </View>
           </View>
         </TouchableHighlight>
-        <View style={styles.utteranceContainer}>
-          {this.utterances}
-        </View>
       </View>
     );
   }
