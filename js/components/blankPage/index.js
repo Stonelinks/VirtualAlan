@@ -12,7 +12,6 @@ class BlankPage extends Component {
   static propTypes = {
     popRoute: React.PropTypes.func,
     openDrawer: React.PropTypes.func,
-    name: React.PropTypes.string,
     index: React.PropTypes.number,
     list: React.PropTypes.arrayOf(React.PropTypes.string),
   }
@@ -22,7 +21,7 @@ class BlankPage extends Component {
   }
 
   render() {
-    const { props: { name, index, list } } = this;
+    const { props: { index, list } } = this;
 
     return (
       <Container style={styles.container}>
@@ -31,7 +30,7 @@ class BlankPage extends Component {
             <Icon name="ios-arrow-back" />
           </Button>
 
-          <Title>{(name) ? this.props.name : 'Blank Page'}</Title>
+          <Title>{'Wow, great job'}</Title>
 
           <Button transparent onPress={this.props.openDrawer}>
             <Icon name="ios-menu" />
@@ -40,7 +39,7 @@ class BlankPage extends Component {
 
         <Content padder>
           <Text>
-            {(!isNaN(index)) ? list[index] : 'Create Something Awesome . . .'}
+            {'VirtualAlan IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.'}
           </Text>
         </Content>
       </Container>
@@ -57,7 +56,6 @@ function bindAction(dispatch) {
 
 function mapStateToProps(state) {
   return {
-    name: state.user.name,
     index: state.list.selectedIndex,
     list: state.list.list,
   };

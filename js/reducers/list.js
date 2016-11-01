@@ -8,11 +8,22 @@ export type State = {
 
 const initialState = {
   list: [
-    'React Native starter kit',
-    'RN Navigator',
-    'NB Easy Grid',
-    'NativeBase',
-    'Redux',
+    'Sure why not',
+    'Be there in 18 minutes',
+    'Coffee?',
+    'Blue bottle?',
+    'I want tacko',
+    'I want swensens',
+    'Hilarious',
+    'We\'re not solving for that',
+    'k great',
+    'ya\'ll coming over?',
+    'Does brian have pants on?',
+    'What is Brian drinking?',
+    'You\'re not answering the question',
+    'Love it',
+    'affagados?',
+    'When I go to the bank, I only get $100 in quarters',
   ],
   selectedIndex: undefined,
 };

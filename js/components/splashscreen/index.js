@@ -14,7 +14,7 @@ export default class SplashPage extends Component {
       navigator.replace({
         id: 'index',
       });
-    }, 1500);
+    }, 500);
   }
 
   render() { // eslint-disable-line class-methods-use-this

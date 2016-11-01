@@ -19,4 +19,8 @@ module.exports = StyleSheet.create({
   mt: {
     marginTop: 20,
   },
+  image: {
+    width: 300,
+    height: 300
+  }
 });
