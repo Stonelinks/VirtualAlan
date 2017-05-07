@@ -1,0 +1,24 @@
+{
+  "name": "VirtualAlan",
+  "description": "An empty new project",
+  "slug": "VirtualAlan",
+  "privacy": "public",
+  "sdkVersion": "16.0.0",
+  "version": "1.0.0",
+  "orientation": "portrait",
+  "primaryColor": "#cccccc",
+  "icon": "./assets/icons/app.png",
+  "loading": {
+    "icon": "./assets/icons/loading.png",
+    "hideExponentText": true
+  },
+  "packagerOpts": {
+    "assetExts": ["ttf", "mp4", "m4a"]
+  },
+  "ios": {
+    "supportsTablet": true
+  },
+  "android": {
+    "package": "com.virtualalan"
+  }
+}
