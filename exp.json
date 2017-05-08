@@ -19,6 +19,7 @@
     "supportsTablet": true
   },
   "android": {
+    "versionCode": 2,
     "package": "com.virtualalan2"
   }
 }

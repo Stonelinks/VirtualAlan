@@ -138,7 +138,6 @@ class App extends React.Component {
     while (randomPhraseIndex === lastPhraseIndex) {
       randomPhraseIndex = Math.floor(Math.random() * phrases.length)
     }
-    const randomPhrase = phrases[randomPhraseIndex]
 
     this.setState({
       currentPhraseIndex: randomPhraseIndex,
@@ -158,11 +157,11 @@ class App extends React.Component {
     }
 
     const { currentPhraseIndex, pastPhraseIndexes } = this.state
-    const imageSource = currentPhraseIndex ? talkingAsset : silentAsset
+    const imageSource = currentPhraseIndex !== null ? talkingAsset : silentAsset
 
     return (
       <View style={styles.container}>
-        {currentPhraseIndex ? (
+        {currentPhraseIndex !== null ? (
           <Expo.Video
             source={phrases[currentPhraseIndex].asset}
             repeat={false}
