@@ -13,10 +13,15 @@
     "hideExponentText": true
   },
   "packagerOpts": {
-    "assetExts": ["ttf", "mp4", "m4a"]
+    "assetExts": [
+      "ttf",
+      "mp4",
+      "m4a"
+    ]
   },
   "ios": {
-    "supportsTablet": true
+    "supportsTablet": true,
+    "bundleIdentifier": "com.stonelinks.virtualalan2"
   },
   "android": {
     "versionCode": 2,
